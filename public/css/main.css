@@ -1,0 +1,143 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", san-serif;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+	transition: all 300ms ease-in-out;
+}
+
+.scroll-down header {
+	transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up header {
+	filter: drop-shadow(0 -10px 20px #aaaaaa);
+}
+
+.menu-is-open {
+	overflow: hidden;
+}
+.menu-is-open {
+	filter: none;
+}
+
+/* =================== Header ================== */
+.hero {
+	display: flex;
+	padding-left: 3rem;
+	width: 100%;
+	height: 126px;
+	background: #fff5dd;
+	justify-content: space-between;
+}
+
+.hero p {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 18px;
+	/* identical to box height */
+	color: #40414d;
+}
+
+.hero h1 {
+	margin-top: 1.8rem;
+	margin-bottom: 0;
+	font-family: Bebas Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 31px;
+	line-height: 37px;
+	letter-spacing: 0.1em;
+	color: #6b484d;
+}
+
+.hero-text {
+	margin-right: 2rem;
+}
+
+.hero-text a {
+}
+
+/* ================== Error page ================== */
+.error {
+	/*border: 1px solid black;*/
+	margin: 0 auto;
+	text-align: center;
+	width: 40%;
+}
+.error h1 {
+	color: tomato;
+}
+
+/* ==================== fomantic overwrites ============ */
+.ui.container {
+	margin-top: 12rem;
+}
+
+.recipe.description {
+	text-align: justify;
+	font-size: 1.1rem;
+	line-height: 1.7rem;
+}
+
+.ui.segment.recipe {
+	font-size: 1.1rem;
+}
+
+.ui.label {
+	letter-spacing: 1.2px;
+	margin: 0.2rem 0;
+}
+.2 .ui.grid.container {
+	margin-top: 2rem;
+}
+
+.ui.submit.button {
+	background-color: #6c63ff;
+	color: white;
+}
+
+/* ================== Scrollbar Styling ================== */
+::-webkit-scrollbar {
+	background-color: #fff;
+	width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+::-webkit-scrollbar-track {
+	background-color: #fff;
+}
+
+::-webkit-scrollbar-track:hover {
+	background-color: #f4f4f4;
+}
+
+/* scrollbar itself */
+::-webkit-scrollbar-thumb {
+	background-color: #babac0;
+	border-radius: 16px;
+	border: 5px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #a0a0a5;
+	border: 4px solid #f4f4f4;
+}
+
+/* set button(top and bottom of the scrollbar) */
+::-webkit-scrollbar-button {
+	display: none;
+}

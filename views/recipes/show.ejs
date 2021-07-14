@@ -1,0 +1,123 @@
+<%- include("../partials/top") %>
+
+
+<div class="ui grid ">
+  <!-- 1st grid ------------------------------------- -->
+  <div class="sixteen wide mobile six wide tablet five wide computer column">
+    <div class="ui card">
+      <div class="content">
+        <p class="header"><%= data.title %> </p>
+        <div class="meta">
+          <span class="date">Ready in <%= data.readyInMinutes %> Mins</span>
+        </div>
+      </div>
+      <div class="image">
+        <img src="<%= data.image %>">
+      </div>
+      <div class="content">
+        <div class="recipe description">
+          <%- data.summary  %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2nd grid ------------------------------------- -->
+  <div class="sixteen wide mobile ten wide tablet eleven wide computer column">
+    <div class="ui segments">
+      <!-- 1st segment -->
+      <div class="ui segment">
+        <% if (data.vegetarian === true) { %>
+        <a class="ui label">Vegetarian</a>
+        <% }  else { %>
+        <a class="ui label">Non Vegetarian</a>
+        <% } %>
+
+        <% if (data.glutenFree === true) { %>
+        <a class="ui label">Gluten Free</a>
+        <% }  else { %>
+        <a class="ui label">Rich Gluten</a>
+        <% } %>
+
+        <% if (data.dairyFree === true) { %>
+        <a class="ui label">Dairy Free</a>
+        <% }  else { %>
+        <a class="ui label">Dairy</a>
+        <% } %>
+
+        <% if (data.veryHealthy === true) { %>
+        <a class="ui label">Very Healthy</a>
+        <% }  else { %>
+        <a class="ui label">Healthy</a>
+        <% } %>
+
+        <% if (data.cheap === true) { %>
+        <a class="ui label">Cheap</a>
+        <% }  else { %>
+        <a class="ui label">Expensive</a>
+        <% } %>
+
+        <% if (data.sustainable === true) { %>
+        <a class="ui label">Sustainable</a>
+        <% }  else { %>
+        <a class="ui label">Unsustainable</a>
+        <% } %>
+
+        <% if (data.veryPopular === true) { %>
+        <a class="ui label">Very Popular</a>
+        <% }  else { %>
+        <a class="ui label">Popular</a>
+        <% } %>
+
+      </div>
+      <!-- 2nd segment -->
+      <div class="ui segment">
+        <h2 class="ui header">Ingredients</h2>
+
+
+
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.extendedIngredients.forEach(e => { %>
+
+              <tr>
+                <td data-label="Photo">
+                  <div class="image">
+                    <img src="https://spoonacular.com/cdn/ingredients_100x100/<%= e.image %>">
+                  </div>
+                </td>
+
+                <td data-label="Name"><b><%= capitalize( e.name) %></b></td>
+                <td data-label="Quantity"><%= capitalize(e.original) %></td>
+              </tr>
+
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ui segment recipe">
+        <h2 class="ui header">Instruction</h2>
+
+        <% data.analyzedInstructions[0].steps.forEach(e => { %>
+
+          <p><%= e.number %>. <%= e.step %> </p>
+
+        <% }) %>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<%- include("../partials/bottom") %>

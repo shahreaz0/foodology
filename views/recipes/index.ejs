@@ -1,0 +1,54 @@
+<%- include("./../partials/top") %>
+
+<div class="ui grid centered">
+  <!-- column -->
+  <div class="sixteen wide mobile fourteen wide tablet twelve wide computer column">
+    <!-- Form -->
+    <form class="ui form" method="GET">
+      <!-- second 3 fields and submit button -->
+      <div class="fields">
+        <div class="field twelve wide">
+          <input name="q" type="text" placeholder="Search..." value="<%= queryStr %> ">
+        </div>
+        <div class="field four wide">
+          <!-- <label>&nbsp;&nbsp;&nbsp;</label> -->
+          <input type="submit" value="Search" class="ui submit button fluid">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="ui grid container">
+
+  <% recipes.forEach((recipe) => { %>
+
+    <div class="sixteen wide mobile seven wide tablet four wide computer column">
+      <div class="ui card">
+        <div class="image">
+          <img src="<%= recipe.image %>">  
+        </div>
+
+        <div class="content">
+          <p id="tooltip" class="header" data-tippy-content="<%= recipe.title%>">
+            <%= recipe.title.substring(0, 20) %></p>
+        </div>
+        <!-- <div class="extra content">
+          See more
+        </div> -->
+       
+       <a href="/recipes/<%= recipe.id %>">
+        <div class="ui bottom attached button">
+          See more
+        </div>
+        </a>
+      </div>
+    </div>
+
+  <% }) %>
+
+</div>
+
+
+
+<%- include("./../partials/bottom") %>

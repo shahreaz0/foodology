@@ -1,5 +1,5 @@
 const axios = require("axios").default;
-require("dotenv").config();
+if (!process.env.NODE_ENV === "production") require("dotenv").config();
 
 const fetchRecipe = async (query) => {
 	const option = {

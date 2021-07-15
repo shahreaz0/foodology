@@ -4,7 +4,7 @@
 <div class="ui grid ">
   <!-- 1st grid ------------------------------------- -->
   <div class="sixteen wide mobile six wide tablet five wide computer column">
-    <div class="ui card">
+    <div class="ui card summary">
       <div class="content">
         <p class="header"><%= data.title %> </p>
         <div class="meta">
@@ -25,7 +25,7 @@
 
   <!-- 2nd grid ------------------------------------- -->
   <div class="sixteen wide mobile ten wide tablet eleven wide computer column">
-    <div class="ui segments">
+    <div class="ui segments label">
       <!-- 1st segment -->
       <div class="ui segment">
         <% if (data.vegetarian === true) { %>
@@ -77,7 +77,7 @@
 
 
 
-        <table class="ui celled table">
+        <table class="ui table unstackable">
           <thead>
             <tr>
               <th>Photo</th>
@@ -96,7 +96,7 @@
                 </td>
 
                 <td data-label="Name"><b><%= capitalize( e.name) %></b></td>
-                <td data-label="Quantity"><%= capitalize(e.original) %></td>
+                <td id="quantity-cell" data-label="Quantity"><%= capitalize(e.original) %></td>
               </tr>
 
             <% }) %>

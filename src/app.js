@@ -8,7 +8,6 @@ app.set("views", path.join("views"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join("public")));
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 
 // middlewares
 app.use((req, res, next) => {

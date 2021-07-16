@@ -8,7 +8,7 @@
       <!-- second 3 fields and submit button -->
       <div class="fields">
         <div class="field twelve wide">
-          <input name="q" type="text" placeholder="Search..." value="<%= queryStr %> ">
+          <input name="q" type="text" placeholder="Search..." value="<%= queryStr && queryStr%>">
         </div>
         <div class="field four wide">
           <!-- <label>&nbsp;&nbsp;&nbsp;</label> -->
@@ -31,16 +31,13 @@
 
         <div class="content">
           <p id="tooltip" class="header" data-tippy-content="<%= recipe.title%>">
-            <%= recipe.title.substring(0, 20) %></p>
+            <%= recipe.title.length <= 22 ?  recipe.title : recipe.title.substring(0, 20) + "..." %></p>
         </div>
-        <!-- <div class="extra content">
-          See more
-        </div> -->
-       
-       <a href="/recipes/<%= recipe.id %>">
-        <div class="ui bottom attached button">
-          See more
-        </div>
+
+        <a href="/recipes/<%= recipe.id %>">
+          <div class="ui bottom attached button">
+            See more
+          </div>
         </a>
       </div>
     </div>
@@ -48,7 +45,5 @@
   <% }) %>
 
 </div>
-
-
 
 <%- include("./../partials/bottom") %>

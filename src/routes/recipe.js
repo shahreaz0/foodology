@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { fetchRecipe, getRecipeDetails } = require("../api/recipe");
 
-// routers
+// routes
 router.get("/recipes", async (req, res) => {
 	try {
 		const data = await fetchRecipe(req.query.q);

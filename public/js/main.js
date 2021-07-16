@@ -19,5 +19,4 @@ window.addEventListener("scroll", () => {
 });
 
 // tooltip
-
 tippy("#tooltip", {});
